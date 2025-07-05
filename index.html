@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Lab Manual - Python & Java</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .tab-button {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .program-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .program-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-title {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .code-container {
+            background: #2c3e50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .code-header {
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px 5px 0 0;
+            font-size: 0.9em;
+            margin: -20px -20px 15px -20px;
+        }
+
+        pre {
+            color: #ecf0f1;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .output-section {
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .output-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .language-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .pattern-output {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: #34495e;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            white-space: pre;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-button {
+                width: 200px;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Programming Lab Manual</h1>
+            <p class="subtitle">Complete Python & Java Programs with Outputs</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-button active" onclick="showTab('python')">Python Programs</button>
+            <button class="tab-button" onclick="showTab('java')">Java Programs</button>
+        </div>
+
+        <!-- Python Programs -->
+        <div id="python" class="tab-content active">
+            <div class="program-section">
+                <div class="language-badge">Python</div>
+                <h2 class="program-title">1. Add Two Numbers</h2>
+                <div class="code-container">
+                    <div class="code-header">Python Code</div>
+                    <pre># Program to add two numbers
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+sum_result = num1 + num2
+print(f"The sum of {num1} and {num2} is {sum_result}")</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter first number: 15
+Enter second number: 25
+The sum of 15.0 and 25.0 is 40.0</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Python</div>
+                <h2 class="program-title">2. Find Maximum of Two Numbers</h2>
+                <div class="code-container">
+                    <div class="code-header">Python Code</div>
+                    <pre># Program to find maximum of two numbers
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+if num1 > num2:
+    maximum = num1
+else:
+    maximum = num2
+
+print(f"The maximum of {num1} and {num2} is {maximum}")</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter first number: 45
+Enter second number: 32
+The maximum of 45.0 and 32.0 is 45.0</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Python</div>
+                <h2 class="program-title">3. Calculate Simple Interest</h2>
+                <div class="code-container">
+                    <div class="code-header">Python Code</div>
+                    <pre># Program to calculate simple interest
+principal = float(input("Enter principal amount: "))
+rate = float(input("Enter rate of interest: "))
+time = float(input("Enter time period (in years): "))
+
+simple_interest = (principal * rate * time) / 100
+amount = principal + simple_interest
+
+print(f"Principal: {principal}")
+print(f"Rate: {rate}%")
+print(f"Time: {time} years")
+print(f"Simple Interest: {simple_interest}")
+print(f"Total Amount: {amount}")</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter principal amount: 10000
+Enter rate of interest: 5
+Enter time period (in years): 2
+Principal: 10000.0
+Rate: 5.0%
+Time: 2.0 years
+Simple Interest: 1000.0
+Total Amount: 11000.0</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Python</div>
+                <h2 class="program-title">4. Check if Number is Prime</h2>
+                <div class="code-container">
+                    <div class="code-header">Python Code</div>
+                    <pre># Program to check if a number is prime
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+num = int(input("Enter a number: "))
+if is_prime(num):
+    print(f"{num} is a prime number")
+else:
+    print(f"{num} is not a prime number")</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a number: 17
+17 is a prime number</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Python</div>
+                <h2 class="program-title">5. Find Factorial of a Number</h2>
+                <div class="code-container">
+                    <div class="code-header">Python Code</div>
+                    <pre># Program to find factorial of a number
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+num = int(input("Enter a number: "))
+if num < 0:
+    print("Factorial is not defined for negative numbers")
+else:
+    result = factorial(num)
+    print(f"Factorial of {num} is {result}")</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a number: 5
+Factorial of 5 is 120</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Python</div>
+                <h2 class="program-title">6. NumPy and Pandas Programs</h2>
+                <div class="code-container">
+                    <div class="code-header">Python Code - NumPy Array Operations</div>
+                    <pre># NumPy program for array operations
+import numpy as np
+
+# Create arrays
+arr1 = np.array([1, 2, 3, 4, 5])
+arr2 = np.array([6, 7, 8, 9, 10])
+
+print("Array 1:", arr1)
+print("Array 2:", arr2)
+print("Addition:", arr1 + arr2)
+print("Multiplication:", arr1 * arr2)
+print("Mean of Array 1:", np.mean(arr1))
+print("Standard Deviation of Array 2:", np.std(arr2))</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">NumPy Output</div>
+                    <pre>Array 1: [1 2 3 4 5]
+Array 2: [ 6  7  8  9 10]
+Addition: [ 7  9 11 13 15]
+Multiplication: [ 6 14 24 36 50]
+Mean of Array 1: 3.0
+Standard Deviation of Array 2: 1.5811388300841898</pre>
+                </div>
+
+                <div class="code-container">
+                    <div class="code-header">Python Code - Pandas DataFrame</div>
+                    <pre># Pandas program for data manipulation
+import pandas as pd
+
+# Create a DataFrame
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'Diana'],
+    'Age': [25, 30, 35, 28],
+    'City': ['New York', 'London', 'Paris', 'Tokyo'],
+    'Salary': [50000, 60000, 70000, 55000]
+}
+
+df = pd.DataFrame(data)
+print("DataFrame:")
+print(df)
+print("\nDataFrame Info:")
+print(df.info())
+print("\nAverage Salary:", df['Salary'].mean())
+print("\nFiltered Data (Age > 27):")
+print(df[df['Age'] > 27])</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Pandas Output</div>
+                    <pre>DataFrame:
+      Name  Age      City  Salary
+0    Alice   25  New York   50000
+1      Bob   30    London   60000
+2  Charlie   35     Paris   70000
+3    Diana   28     Tokyo   55000
+
+DataFrame Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 4 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   Name    4 non-null      object
+ 1   Age     4 non-null      int64 
+ 2   City    4 non-null      object
+ 3   Salary  4 non-null      int64 
+dtypes: int64(2), object(2)
+memory usage: 256.0+ bytes
+None
+
+Average Salary: 58750.0
+
+Filtered Data (Age > 27):
+      Name  Age   City  Salary
+1      Bob   30  London   60000
+2  Charlie   35  Paris   70000
+3    Diana   28  Tokyo   55000</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Java Programs -->
+        <div id="java" class="tab-content">
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">1. Hello World</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Output</div>
+                    <pre>Hello World!</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">2. Get Input from User</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class UserInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+        
+        System.out.println("Hello " + name + "! You are " + age + " years old.");
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter your name: John
+Enter your age: 25
+Hello John! You are 25 years old.</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">3. Addition of Two Numbers</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class Addition {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+        
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+        
+        double sum = num1 + num2;
+        System.out.println("Sum of " + num1 + " and " + num2 + " is " + sum);
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter first number: 15.5
+Enter second number: 24.3
+Sum of 15.5 and 24.3 is 39.8</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">4. Maximum of Three Numbers</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class MaximumOfThree {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+        
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+        
+        System.out.print("Enter third number: ");
+        double num3 = scanner.nextDouble();
+        
+        double maximum = Math.max(Math.max(num1, num2), num3);
+        System.out.println("Maximum of " + num1 + ", " + num2 + ", and " + num3 + " is " + maximum);
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter first number: 45
+Enter second number: 32
+Enter third number: 78
+Maximum of 45.0, 32.0, and 78.0 is 78.0</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">5. Check Even or Odd</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class EvenOdd {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        if (number % 2 == 0) {
+            System.out.println(number + " is even");
+        } else {
+            System.out.println(number + " is odd");
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a number: 17
+17 is odd</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">6. Factorial of a Number</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class Factorial {
+    public static long factorial(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        if (number < 0) {
+            System.out.println("Factorial is not defined for negative numbers");
+        } else {
+            long result = factorial(number);
+            System.out.println("Factorial of " + number + " is " + result);
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a number: 6
+Factorial of 6 is 720</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">7. Check Leap Year</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class LeapYear {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+        
+        boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        
+        if (isLeapYear) {
+            System.out.println(year + " is a leap year");
+        } else {
+            System.out.println(year + " is not a leap year");
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a year: 2024
+2024 is a leap year</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">8. Calculate Simple Interest</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class SimpleInterest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter principal amount: ");
+        double principal = scanner.nextDouble();
+        
+        System.out.print("Enter rate of interest: ");
+        double rate = scanner.nextDouble();
+        
+        System.out.print("Enter time period (in years): ");
+        double time = scanner.nextDouble();
+        
+        double simpleInterest = (principal * rate * time) / 100;
+        double amount = principal + simpleInterest;
+        
+        System.out.println("Principal: " + principal);
+        System.out.println("Rate: " + rate + "%");
+        System.out.println("Time: " + time + " years");
+        System.out.println("Simple Interest: " + simpleInterest);
+        System.out.println("Total Amount: " + amount);
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter principal amount: 10000
+Enter rate of interest: 8
+Enter time period (in years): 3
+Principal: 10000.0
+Rate: 8.0%
+Time: 3.0 years
+Simple Interest: 2400.0
+Total Amount: 12400.0</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">9. Power of a Number</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class PowerOfNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter base number: ");
+        double base = scanner.nextDouble();
+        
+        System.out.print("Enter exponent: ");
+        double exponent = scanner.nextDouble();
+        
+        double result = Math.pow(base, exponent);
+        System.out.println(base + " raised to the power " + exponent + " is " + result);
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter base number: 2
+Enter exponent: 8
+2.0 raised to the power 8.0 is 256.0</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">10. Rectangle Area Calculator</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class AreaCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Area Calculator");
+        System.out.println("1. Rectangle");
+        System.out.println("2. Square");
+        System.out.println("3. Circle");
+        System.out.print("Choose option (1-3): ");
+        int choice = scanner.nextInt();
+        
+        switch (choice) {
+            case 1:
+                System.out.print("Enter length: ");
+                double length = scanner.nextDouble();
+                System.out.print("Enter width: ");
+                double width = scanner.nextDouble();
+                double rectArea = length * width;
+                System.out.println("Area of rectangle: " + rectArea);
+                break;
+                
+            case 2:
+                System.out.print("Enter side length: ");
+                double side = scanner.nextDouble();
+                double squareArea = side * side;
+                System.out.println("Area of square: " + squareArea);
+                break;
+                
+            case 3:
+                System.out.print("Enter radius: ");
+                double radius = scanner.nextDouble();
+                double circleArea = Math.PI * radius * radius;
+                System.out.println("Area of circle: " + circleArea);
+                break;
+                
+            default:
+                System.out.println("Invalid choice!");
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Area Calculator
+1. Rectangle
+2. Square
+3. Circle
+Choose option (1-3): 3
+Enter radius: 5
+Area of circle: 78.53981633974483</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">11. Volume Calculator</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class VolumeCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Volume Calculator");
+        System.out.println("1. Cube");
+        System.out.println("2. Cuboid");
+        System.out.println("3. Sphere");
+        System.out.print("Choose option (1-3): ");
+        int choice = scanner.nextInt();
+        
+        switch (choice) {
+            case 1:
+                System.out.print("Enter side length: ");
+                double side = scanner.nextDouble();
+                double cubeVolume = side * side * side;
+                System.out.println("Volume of cube: " + cubeVolume);
+                break;
+                
+            case 2:
+                System.out.print("Enter length: ");
+                double length = scanner.nextDouble();
+                System.out.print("Enter width: ");
+                double width = scanner.nextDouble();
+                System.out.print("Enter height: ");
+                double height = scanner.nextDouble();
+                double cuboidVolume = length * width * height;
+                System.out.println("Volume of cuboid: " + cuboidVolume);
+                break;
+                
+            case 3:
+                System.out.print("Enter radius: ");
+                double radius = scanner.nextDouble();
+                double sphereVolume = (4.0/3.0) * Math.PI * radius * radius * radius;
+                System.out.println("Volume of sphere: " + sphereVolume);
+                break;
+                
+            default:
+                System.out.println("Invalid choice!");
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Volume Calculator
+1. Cube
+2. Cuboid
+3. Sphere
+Choose option (1-3): 2
+Enter length: 10
+Enter width: 5
+Enter height: 3
+Volume of cuboid: 150.0</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">12. String Conversion</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class StringConversion {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        
+        System.out.println("Original string: " + input);
+        System.out.println("Uppercase: " + input.toUpperCase());
+        System.out.println("Lowercase: " + input.toLowerCase());
+        System.out.println("Character array: " + java.util.Arrays.toString(input.toCharArray()));
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a string: Hello World
+Original string: Hello World
+Uppercase: HELLO WORLD
+Lowercase: hello world
+Character array: [H, e, l, l, o,  , W, o, r, l, d]</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">13. Duplicate Characters in String</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+
+public class DuplicateCharacters {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine().toLowerCase();
+        
+        Map&lt;Character, Integer&gt; charCount = new HashMap&lt;&gt;();
+        
+        // Count characters
+        for (char c : input.toCharArray()) {
+            if (c != ' ') {
+                charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+            }
+        }
+        
+        System.out.println("Duplicate characters:");
+        for (Map.Entry&lt;Character, Integer&gt; entry : charCount.entrySet()) {
+            if (entry.getValue() &gt; 1) {
+                System.out.println(entry.getKey() + " appears " + entry.getValue() + " times");
+            }
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a string: Programming
+Duplicate characters:
+r appears 2 times
+m appears 2 times
+g appears 2 times</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">14. Palindrome String Check</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        
+        String cleaned = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String reversed = new StringBuilder(cleaned).reverse().toString();
+        
+        if (cleaned.equals(reversed)) {
+            System.out.println("\"" + input + "\" is a palindrome");
+        } else {
+            System.out.println("\"" + input + "\" is not a palindrome");
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a string: A man a plan a canal Panama
+"A man a plan a canal Panama" is a palindrome</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">15. Reverse Words in String</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class ReverseWords {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        
+        String[] words = input.split(" ");
+        StringBuilder reversed = new StringBuilder();
+        
+        for (int i = words.length - 1; i &gt;= 0; i--) {
+            reversed.append(words[i]);
+            if (i &gt; 0) {
+                reversed.append(" ");
+            }
+        }
+        
+        System.out.println("Original: " + input);
+        System.out.println("Reversed: " + reversed.toString());
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a string: Hello World Java Programming
+Original: Hello World Java Programming
+Reversed: Programming Java World Hello</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">16. Count Vowels and Consonants</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class VowelConsonantCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine().toLowerCase();
+        
+        int vowels = 0, consonants = 0;
+        
+        for (char c : input.toCharArray()) {
+            if (Character.isLetter(c)) {
+                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+        
+        System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a string: Hello World
+Vowels: 3
+Consonants: 7</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">17. Armstrong Number Check</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class ArmstrongNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        int originalNumber = number;
+        int digits = String.valueOf(number).length();
+        int sum = 0;
+        
+        while (number &gt; 0) {
+            int digit = number % 10;
+            sum += Math.pow(digit, digits);
+            number /= 10;
+        }
+        
+        if (sum == originalNumber) {
+            System.out.println(originalNumber + " is an Armstrong number");
+        } else {
+            System.out.println(originalNumber + " is not an Armstrong number");
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a number: 153
+153 is an Armstrong number</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">18. Prime Number Check</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class PrimeNumber {
+    public static boolean isPrime(int n) {
+        if (n &lt;= 1) return false;
+        if (n &lt;= 3) return true;
+        if (n % 2 == 0 || n % 3 == 0) return false;
+        
+        for (int i = 5; i * i &lt;= n; i += 6) {
+            if (n % i == 0 || n % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        if (isPrime(number)) {
+            System.out.println(number + " is a prime number");
+        } else {
+            System.out.println(number + " is not a prime number");
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter a number: 29
+29 is a prime number</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">19. Fibonacci Series</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter number of terms: ");
+        int n = scanner.nextInt();
+        
+        int first = 0, second = 1;
+        
+        if (n &gt;= 1) {
+            System.out.print("Fibonacci Series: " + first);
+        }
+        if (n &gt;= 2) {
+            System.out.print(", " + second);
+        }
+        
+        for (int i = 3; i &lt;= n; i++) {
+            int next = first + second;
+            System.out.print(", " + next);
+            first = second;
+            second = next;
+        }
+        
+        System.out.println();
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter number of terms: 10
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">20. Rectangle Perimeter</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class RectanglePerimeter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter length of rectangle: ");
+        double length = scanner.nextDouble();
+        
+        System.out.print("Enter width of rectangle: ");
+        double width = scanner.nextDouble();
+        
+        double perimeter = 2 * (length + width);
+        double area = length * width;
+        
+        System.out.println("Rectangle dimensions:");
+        System.out.println("Length: " + length);
+        System.out.println("Width: " + width);
+        System.out.println("Perimeter: " + perimeter);
+        System.out.println("Area: " + area);
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <pre>Enter length of rectangle: 12
+Enter width of rectangle: 8
+Rectangle dimensions:
+Length: 12.0
+Width: 8.0
+Perimeter: 40.0
+Area: 96.0</pre>
+                </div>
+            </div>
+
+            <div class="program-section">
+                <div class="language-badge">Java</div>
+                <h2 class="program-title">21. Pattern Display</h2>
+                <div class="code-container">
+                    <div class="code-header">Java Code</div>
+                    <pre>import java.util.Scanner;
+
+public class PatternDisplay {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+        
+        System.out.println("\nPattern 1 - Right Triangle:");
+        for (int i = 1; i &lt;= rows; i++) {
+            for (int j = 1; j &lt;= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println("\nPattern 2 - Number Triangle:");
+        for (int i = 1; i &lt;= rows; i++) {
+            for (int j = 1; j &lt;= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println("\nPattern 3 - Pyramid:");
+        for (int i = 1; i &lt;= rows; i++) {
+            // Print spaces
+            for (int j = 1; j &lt;= rows - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int k = 1; k &lt;= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+        scanner.close();
+    }
+}</pre>
+                </div>
+                <div class="output-section">
+                    <div class="output-header">Sample Output</div>
+                    <div class="pattern-output">Enter number of rows: 5
+
+Pattern 1 - Right Triangle:
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+Pattern 2 - Number Triangle:
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+
+Pattern 3 - Pyramid:
+    *
+   ***
+  *****
+ *******
+*********</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
